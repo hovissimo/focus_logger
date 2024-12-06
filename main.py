@@ -16,7 +16,8 @@ def get_logfile_path():
 
     This is dynamic because there's a timestamp in the filename, and we can be running overnight.
     '''
-    return Path.home() / "focus_logs" / f"focus_log_{datetime.now().strftime("%Y%m%d")}.txt"
+    timestamp = datetime.now().strftime("%Y%m%d")
+    return Path.home() / "focus_logs" / f"focus_log_{timestamp}_{HOSTNAME}.txt"
 
 def get_foreground_window_app():
     try:
